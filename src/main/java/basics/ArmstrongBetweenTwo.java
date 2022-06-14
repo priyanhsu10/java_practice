@@ -3,11 +3,13 @@ package basics;
 public class ArmstrongBetweenTwo {
 
     public static void main(String[] args) {
-        int a= 100;
+        int a= 121;
+
         int i= 3;
         //
-        while(i>0 ){
-            System.out.println(a&3);
+        while(i>=0 ){
+            System.out.println(a&i);
+            i--;
         }
     }
 }

@@ -9,6 +9,7 @@ public class InputUsingBufferReader {
 
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         System.out.println("enter the command:");
+
         try {
             String s= br.readLine();
             System.out.println("command enter :"+ s);
