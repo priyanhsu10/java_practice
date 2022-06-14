@@ -1,11 +1,12 @@
 package arrayproblems;
 
+import java.util.Stack;
+
 public class PalindromNumber {
     public static void main(String[] args) {
         System.out.println(isPalindrome(1001));
     }
     public static boolean isPalindrome(int x) {
-
         char[] s= String.valueOf(x).toCharArray();
         int back=s.length-1;
         if(s.length==2){
