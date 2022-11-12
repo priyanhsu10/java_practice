@@ -1,13 +1,16 @@
 package arrayproblems;
 
+import java.util.Hashtable;
+
 public class MaxWaterContainer {
     public static void main(String[] args) {
         var solution = new Solution();
         int[] input = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(solution.maxArea(input));
-
+        System.out.println('j' + 'a' + 'v' + 'a');
     }
 }
+
 
 class Solution {
     public int maxArea(int[] height) {
