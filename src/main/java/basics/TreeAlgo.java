@@ -1,5 +1,6 @@
 package basics;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -37,8 +38,36 @@ public class TreeAlgo {
         //postOrder(root);
         // searchExample(root);
         //  levelOrder(root);
-        deleteNode(root, 5);
-        inOrder(root);
+//        deleteNode(root, 5);
+//        inOrder(root);
+        printRootToLeaf(root,new ArrayList<Integer>());
+    }
+
+    private static void printRootToLeaf(Node root, ArrayList<Integer> path) {
+
+    if(root==null){
+        return;
+    }
+    path.add(root.data);
+    //leaf node
+    if(root.left==null && root.right==null){
+
+        printPath(path);
+
+    }else {
+//non leaf node
+        printRootToLeaf(root.left,path);
+        printRootToLeaf(root.right,path);
+    }
+    path.remove(new Integer(root.data));
+    }
+
+    private static void printPath(ArrayList<Integer> path) {
+        for (Integer integer : path) {
+            System.out.print(integer+"->");
+
+        }
+        System.out.println();
     }
 
     private static Node deleteNode(Node root, int i) {
@@ -63,7 +92,7 @@ public class TreeAlgo {
 
             //case 3 : Node having both child
             //solution : find inorder successor of node that means left most node from right subtree
-            Node is= inOrderSucessor(root.right);
+            Node is= inOrderSuccessor(root.right);
             root.data= is.data;
             root.right=deleteNode(is.right,is.data);
 
@@ -72,7 +101,7 @@ public class TreeAlgo {
 
     }
 
-    private static Node inOrderSucessor(Node root) {
+    private static Node inOrderSuccessor(Node root) {
         while (root.left != null) {
             root.left = root;
         }
